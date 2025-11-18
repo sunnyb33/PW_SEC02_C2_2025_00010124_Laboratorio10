@@ -1,14 +1,16 @@
 import express from 'express';
 import cors from 'cors';
-import router from './routes/index.js';
+import router from '../Backend/routes/index.js';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Routes
+app.use(cors());
+app.use(express.json());
+
 app.use('/api', router);
 
-// Info endpoint para probar
+
 app.get('/info', (req, res) => {
     res.json({
         message: 'API Laboratorio X - UCA',
@@ -26,8 +28,8 @@ app.get('/info', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor en http://localhost:${PORT}`);
-    console.log(`📋 Nuevos endpoints Laboratorio X:`);
+    console.log(` Servidor en http://localhost:${PORT}`);
+    console.log(` Nuevos endpoints Laboratorio X:`);
     console.log(`   GET  /api/customers`);
     console.log(`   GET  /api/customers/search?code=XYZ`);
     console.log(`   GET  /api/sales`);

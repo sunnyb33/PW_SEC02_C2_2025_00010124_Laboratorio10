@@ -1,6 +1,6 @@
 import express from 'express';
 
-// Importar controladores individuales
+
 import { signIn } from '../controllers/singin.js';
 import { signUp } from '../controllers/singup.js';
 import { displayHome } from '../controllers/displayHome.js';
@@ -9,7 +9,6 @@ import { getUser } from '../controllers/getUsers.js';
 import { updateUserData } from '../controllers/updateUsers.js';
 import { deleteUserData } from '../controllers/deleteUsers.js';
 
-// Importar nuevos controladores para Laboratorio X
 import { 
     getCustomersList,
     createNewSale,
@@ -17,6 +16,7 @@ import {
     searchCustomerByCode,
     getSalesReportData
 } from '../controllers/customerController.js';
+
 
 import { verifyToken } from '../middleware/auth.js';
 
